@@ -1,3 +1,7 @@
+0.3.0 / 2014-11-18
+==================
+* Allowing multiple types
+
 0.2.0 / 2014-11-18
 ==================
 * Renaming styles to types

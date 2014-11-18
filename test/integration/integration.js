@@ -11,8 +11,7 @@ describe('integration', function(){
       var style = guide.find('TEST000a');
       expect(style.id).to.eql('TEST000a')
       expect(style.title).to.eql('Default Type of Foo')
-      expect(style.type).to.eql('Foo')
-      expect(style.default).to.eql('Foo')
+      expect(style.types).to.eql([{'default': true, id: 'Foo'}])
       expect(style.fn()).to.eql('Foo')
     })
   })
