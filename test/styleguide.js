@@ -8,6 +8,7 @@ var StyleGuide = require('..');
  * This is a test fixture style
  *
  * @id BOOK12345
+ * @type Book
  */
 
 exports[0] = function(){
@@ -36,17 +37,68 @@ describe('styleguide', function(){
   })
 
   describe('.add()', function(){
-    beforeEach(function(){
-      sg.path(__dirname)
+    it('should add types correctly', function(){
+      sg.add({id: 'abc', title: '123', type: 'Book', description: 'test'}, function(){return 'foo bar'})
+      expect(sg.types.abc.title).to.eql('123')
+      expect(sg.types.abc.type).to.eql('Book')
+      expect(sg.types.abc.description).to.eql('test')
+      expect(sg.types.abc.fn()).to.eql('foo bar')
     })
 
-    it('should load sources correctly', function(){
-      sg.add('Book', './styleguide');
-      expect(sg.styles.BOOK12345.id).to.eql('BOOK12345')
-      expect(sg.styles.BOOK12345.title).to.eql('foo bar baz multi line')
-      expect(sg.styles.BOOK12345.sourceType).to.eql('Book')
-      expect(sg.styles.BOOK12345.description).to.eql('<p>This is a test fixture style</p>')
-      expect(sg.styles.BOOK12345.fn()).to.eql('foo bar')
+    it('should not allow same id', function(){
+      sg.add({id: 'abc', title: '123', type: 'Book'})
+      expect(sg.add.bind(sg, {id:'abc'})).to.throwException(function (e) {
+        expect(e).to.be.a(Error);
+        expect(e.message).to.eql('must have a UNIQUE id')
+      });
+    })
+
+    it('must have an id', function(){
+      expect(sg.add.bind(sg, {})).to.throwException(function (e) {
+        expect(e).to.be.a(Error);
+        expect(e.message).to.eql('must have a (unique) id')
+      });
+    })
+
+    it('should have title', function(){
+      expect(sg.add.bind(sg, {id:'abc'})).to.throwException(function (e) {
+        expect(e).to.be.a(Error);
+        expect(e.message).to.eql('must have a title')
+      });
+    })
+
+    it('should have type', function(){
+      expect(sg.add.bind(sg, {id:'abc', title: 'foo'})).to.throwException(function (e) {
+        expect(e).to.be.a(Error);
+        expect(e.message).to.eql('must have a type or default')
+      });
+    })
+
+    it('should have type', function(){
+      expect(sg.add.bind(sg, {id:'abc', title: 'foo', 'default':'bar'})).to.not.throwException();
+      expect(sg.add.bind(sg, {id:'abc1', title: 'foo', type:'bar'})).to.not.throwException();
+    })
+
+    it('should not have 2 identical defaults', function(){
+      sg.add({id: 'abc', title: '123', 'default': 'Book'});
+      var fn = sg.add.bind(sg, {id: 'abc1', title: '123', 'default': 'Book'});
+      expect(fn).to.throwException(function (e) {
+        expect(e).to.be.a(Error);
+        expect(e.message).to.eql('must have only 1 default for type Book')
+      });
     })
   })
+
+  describe('.load()', function(){
+    it('should load types correctly', function(){
+      sg.path(__dirname)
+      sg.load('./styleguide');
+      expect(sg.types.BOOK12345).to.not.be(undefined);
+      expect(sg.types.BOOK12345.title).to.eql('foo bar baz multi line')
+      expect(sg.types.BOOK12345.type).to.eql('Book')
+      expect(sg.types.BOOK12345.description).to.eql('<p>This is a test fixture style</p>')
+      expect(sg.types.BOOK12345.fn()).to.eql('foo bar')
+    })
+  })
+
 })

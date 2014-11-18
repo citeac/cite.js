@@ -17,11 +17,23 @@ function defaults(){
   })
 }
 
+/**
+ * Default Type of Foo
+ *
+ * @id TEST000a
+ * @default Foo
+ */
+
+exports.push(function(){
+  return 'Foo'
+})
+
 
 /**
  * Contributor
  *
  * @id TEST0001
+ * @type Foo
  */
 
 exports.push(function(){
@@ -38,6 +50,7 @@ exports.push(function(){
  * Date
  *
  * @id TEST0002
+ * @type Foo
  */
 
 exports.push(function(){
@@ -51,6 +64,7 @@ exports.push(function(){
  * String
  *
  * @id TEST0003
+ * @type Foo
  */
 
 exports.push(function(){
@@ -62,6 +76,7 @@ exports.push(function(){
  * String stub
  *
  * @id TEST0004
+ * @type Foo
  */
 
 exports.push(function(){
@@ -73,6 +88,7 @@ exports.push(function(){
  * Number
  *
  * @id TEST0005
+ * @type Foo
  */
 
 exports.push(function(){
@@ -84,6 +100,7 @@ exports.push(function(){
  * Number stub
  *
  * @id TEST0006
+ * @type Foo
  */
 
 exports.push(function(){
@@ -95,6 +112,7 @@ exports.push(function(){
  * text
  *
  * @id TEST0007
+ * @type Foo
  */
 
 exports.push(function(){
@@ -110,6 +128,7 @@ exports.push(function(){
  * text hide
  *
  * @id TEST0008
+ * @type Foo
  */
 
 exports.push(function(){
@@ -127,6 +146,7 @@ exports.push(function(){
  * text multi
  *
  * @id TEST0009
+ * @type Foo
  */
 
 exports.push(function(){
@@ -144,6 +164,7 @@ exports.push(function(){
  * enum
  *
  * @id TEST0010
+ * @type Foo
  */
 
 exports.push(function(){
@@ -165,6 +186,7 @@ exports.push(function(){
  * enum selector
  *
  * @id TEST0011
+ * @type Foo
  */
 
 exports.push(function(){
@@ -186,6 +208,7 @@ exports.push(function(){
  * prefix
  *
  * @id TEST0012
+ * @type Foo
  */
 
 exports.push(function(){
@@ -197,6 +220,7 @@ exports.push(function(){
  * suffix
  *
  * @id TEST0013
+ * @type Foo
  */
 
 exports.push(function(){
@@ -209,6 +233,7 @@ exports.push(function(){
  * bold
  *
  * @id TEST0014
+ * @type Foo
  */
 
 exports.push(function(){
@@ -223,6 +248,7 @@ exports.push(function(){
  * bold prefix
  *
  * @id TEST0015
+ * @type Foo
  */
 
 exports.push(function(){
@@ -237,6 +263,7 @@ exports.push(function(){
  * bold prefix and main
  *
  * @id TEST0016
+ * @type Foo
  */
 
 exports.push(function(){
@@ -251,6 +278,7 @@ exports.push(function(){
  * bold main and suffix
  *
  * @id TEST0017
+ * @type Foo
  */
 
 exports.push(function(){
@@ -266,6 +294,7 @@ exports.push(function(){
  * bold and italics
  *
  * @id TEST0018
+ * @type Foo
  */
 
 exports.push(function(){
@@ -281,6 +310,7 @@ exports.push(function(){
  * show
  *
  * @id TEST0019
+ * @type Foo
  */
 
 exports.push(function(){
@@ -294,6 +324,7 @@ exports.push(function(){
  * hide
  *
  * @id TEST0020
+ * @type Foo
  */
 
 exports.push(function(){
@@ -308,6 +339,7 @@ exports.push(function(){
  * optional
  *
  * @id TEST0021
+ * @type Foo
  */
 
 exports.push(function(){
@@ -321,6 +353,7 @@ exports.push(function(){
  * either
  *
  * @id TEST0022
+ * @type Foo
  */
 
 exports.push(function(){
@@ -335,6 +368,7 @@ exports.push(function(){
  * either optional
  *
  * @id TEST0023
+ * @type Foo
  */
 
 exports.push(function(){
@@ -350,6 +384,7 @@ exports.push(function(){
  * all
  *
  * @id TEST0024
+ * @type Foo
  */
 
 exports.push(function(){
@@ -364,6 +399,7 @@ exports.push(function(){
  * all optional
  *
  * @id TEST0025
+ * @type Foo
  */
 
 exports.push(function(){
@@ -380,6 +416,7 @@ exports.push(function(){
  * identical
  *
  * @id TEST0026
+ * @type Foo
  */
 
 exports.push(function(){
@@ -396,6 +433,7 @@ exports.push(function(){
  * if set
  *
  * @id TEST0027
+ * @type Foo
  */
 
 exports.push(function(){
@@ -413,6 +451,7 @@ exports.push(function(){
  * upon set
  *
  * @id TEST0028
+ * @type Foo
  */
 
 exports.push(function(){
@@ -430,6 +469,7 @@ exports.push(function(){
  * upon style
  *
  * @id TEST0029
+ * @type Foo
  */
 
 exports.push(function(){
@@ -452,6 +492,7 @@ exports.push(function(){
  * upon show
  *
  * @id TEST0030
+ * @type Foo
  */
 
 exports.push(function(){
@@ -469,6 +510,7 @@ exports.push(function(){
  * upon hide
  *
  * @id TEST0031
+ * @type Foo
  */
 
 exports.push(function(){
@@ -485,6 +527,7 @@ exports.push(function(){
  * upon show and hide
  *
  * @id TEST0032
+ * @type Foo
  */
 
 exports.push(function(){
@@ -505,6 +548,7 @@ exports.push(function(){
  * multiple requirements
  *
  * @id TEST0033
+ * @type Foo
  */
 
 exports.push(function(){

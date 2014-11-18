@@ -11,7 +11,6 @@ while being simple enough for novices to utilise.
 ## How to use
 Examples coming soon
 
-
 ## Terminology
 
 #### StyleGuide

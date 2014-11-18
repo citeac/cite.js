@@ -1,5 +1,5 @@
 var expect = require('expect.js')
-var Style = require('../lib/style')
+var Style = require('../lib/type')
 
 describe('style', function(){
   var style;

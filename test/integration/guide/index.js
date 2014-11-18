@@ -13,9 +13,9 @@ var StyleGuide = module.exports = require('../../../')();
 StyleGuide.config(require('./styleguide'));
 
 /**
- * Load Styles
+ * Load Types
  */
 
 StyleGuide
 .path(__dirname)
-.add('Example', './source');
+.load('./source');

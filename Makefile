@@ -8,7 +8,7 @@ test:
 		test/trait/location.js \
 		test/trait/number.js \
 		test/trait/string.js \
-		test/style.js \
+		test/type.js \
 		test/integration/integration.js \
 		test/styleguide.js \
 

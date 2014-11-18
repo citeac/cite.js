@@ -6,7 +6,19 @@ function find(id, data){
 }
 
 describe('integration', function(){
-  describe('types', function(){
+  describe('meta', function(){
+    it('sets default type', function(){
+      var style = guide.find('TEST000a');
+      expect(style.id).to.eql('TEST000a')
+      expect(style.title).to.eql('Default Type of Foo')
+      expect(style.type).to.eql('Foo')
+      expect(style.default).to.eql('Foo')
+      expect(style.fn()).to.eql('Foo')
+    })
+  })
+
+
+  describe('trait types', function(){
     describe('contributor', function(){
       it('can stringify', function(){
         var data = {author: [{first: 'Foo', last: 'Bar'}]}
